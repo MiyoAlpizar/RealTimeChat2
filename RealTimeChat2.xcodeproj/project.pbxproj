@@ -3,11 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		753D00EC04E8B920475E59C1 /* Pods_RealTimeChat2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA037223003B38C193746C88 /* Pods_RealTimeChat2.framework */; };
+		A246240C252BAE1D0042E7AB /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246240B252BAE1D0042E7AB /* MainTabViewController.swift */; };
+		A274B694252BBDD2000230D1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B693252BBDD2000230D1 /* LoginViewModel.swift */; };
+		A274B698252BD4D0000230D1 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B697252BD4D0000230D1 /* ContactsViewModel.swift */; };
+		A28786CC252BB74D00E173DF /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28786C7252BB74C00E173DF /* ContactsTableViewController.swift */; };
+		A28786CD252BB74D00E173DF /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28786C8252BB74C00E173DF /* CreateAccountViewController.swift */; };
+		A28786CE252BB74D00E173DF /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28786C9252BB74C00E173DF /* ChatsTableViewController.swift */; };
+		A28786CF252BB74D00E173DF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28786CA252BB74C00E173DF /* LoginViewController.swift */; };
+		A28786D0252BB74D00E173DF /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28786CB252BB74C00E173DF /* ProfileTableViewController.swift */; };
+		A28786D3252BB7B500E173DF /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28786D2252BB7B500E173DF /* ScrollViewController.swift */; };
+		A28786D5252BB7F200E173DF /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28786D4252BB7F200E173DF /* ProfileHeaderView.swift */; };
+		A2B04A69252BA25300DB5F7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2B04A68252BA25300DB5F7B /* GoogleService-Info.plist */; };
+		A2B04A83252BA3E100DB5F7B /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B04A7E252BA3E100DB5F7B /* ColorExtensions.swift */; };
+		A2B04A84252BA3E100DB5F7B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B04A7F252BA3E100DB5F7B /* StringExtensions.swift */; };
+		A2B04A85252BA3E100DB5F7B /* ButtonExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B04A80252BA3E100DB5F7B /* ButtonExtentions.swift */; };
+		A2B04A86252BA3E100DB5F7B /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B04A81252BA3E100DB5F7B /* UIViewExtensions.swift */; };
+		A2B04A87252BA3E100DB5F7B /* ViewControllerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B04A82252BA3E100DB5F7B /* ViewControllerExtentions.swift */; };
+		A2B04A8E252BA43900DB5F7B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B04A8D252BA43900DB5F7B /* StartViewController.swift */; };
+		A2B04A91252BA4B400DB5F7B /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B04A90252BA4B400DB5F7B /* StartViewModel.swift */; };
+		A2B04A97252BA4E800DB5F7B /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B04A94252BA4E800DB5F7B /* DatabaseHelper.swift */; };
+		A2B04A98252BA4E800DB5F7B /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B04A95252BA4E800DB5F7B /* KeyboardHelper.swift */; };
+		A2B04A99252BA4E800DB5F7B /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B04A96252BA4E800DB5F7B /* UserHelper.swift */; };
+		A2B04A9C252BABCE00DB5F7B /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B04A9B252BABCE00DB5F7B /* AppUser.swift */; };
 		A2E24401252B96190004285B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E24400252B96190004285B /* AppDelegate.swift */; };
 		A2E24403252B96190004285B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E24402252B96190004285B /* SceneDelegate.swift */; };
 		A2E24405252B96190004285B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E24404252B96190004285B /* ViewController.swift */; };
@@ -17,6 +39,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A246240B252BAE1D0042E7AB /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		A274B693252BBDD2000230D1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A274B697252BD4D0000230D1 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		A28786C7252BB74C00E173DF /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		A28786C8252BB74C00E173DF /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		A28786C9252BB74C00E173DF /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
+		A28786CA252BB74C00E173DF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A28786CB252BB74C00E173DF /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		A28786D2252BB7B500E173DF /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		A28786D4252BB7F200E173DF /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		A2B04A68252BA25300DB5F7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A2B04A7E252BA3E100DB5F7B /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		A2B04A7F252BA3E100DB5F7B /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		A2B04A80252BA3E100DB5F7B /* ButtonExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtentions.swift; sourceTree = "<group>"; };
+		A2B04A81252BA3E100DB5F7B /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		A2B04A82252BA3E100DB5F7B /* ViewControllerExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtentions.swift; sourceTree = "<group>"; };
+		A2B04A8D252BA43900DB5F7B /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		A2B04A90252BA4B400DB5F7B /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
+		A2B04A94252BA4E800DB5F7B /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		A2B04A95252BA4E800DB5F7B /* KeyboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
+		A2B04A96252BA4E800DB5F7B /* UserHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
+		A2B04A9B252BABCE00DB5F7B /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		A2E243FD252B96190004285B /* RealTimeChat2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealTimeChat2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E24400252B96190004285B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2E24402252B96190004285B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +92,6 @@
 				C71CC1B8366C3D72E4F9DB8F /* Pods-RealTimeChat2.debug.xcconfig */,
 				BA0744878215CADDB81DA6C1 /* Pods-RealTimeChat2.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -58,6 +101,36 @@
 				CA037223003B38C193746C88 /* Pods_RealTimeChat2.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A28786D1252BB77E00E173DF /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				A28786D2252BB7B500E173DF /* ScrollViewController.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		A2B04A7D252BA34500DB5F7B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2B04A80252BA3E100DB5F7B /* ButtonExtentions.swift */,
+				A2B04A7E252BA3E100DB5F7B /* ColorExtensions.swift */,
+				A2B04A7F252BA3E100DB5F7B /* StringExtensions.swift */,
+				A2B04A81252BA3E100DB5F7B /* UIViewExtensions.swift */,
+				A2B04A82252BA3E100DB5F7B /* ViewControllerExtentions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A2B04A93252BA4C000DB5F7B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A2B04A94252BA4E800DB5F7B /* DatabaseHelper.swift */,
+				A2B04A95252BA4E800DB5F7B /* KeyboardHelper.swift */,
+				A2B04A96252BA4E800DB5F7B /* UserHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		A2E243F4252B96190004285B = {
@@ -81,7 +154,12 @@
 		A2E243FF252B96190004285B /* RealTimeChat2 */ = {
 			isa = PBXGroup;
 			children = (
-				A2E24419252B9A3F0004285B /* Login */,
+				A28786D1252BB77E00E173DF /* Controls */,
+				A2E24415252B96F60004285B /* Model */,
+				A2E24416252B96FD0004285B /* View */,
+				A2E24417252B97040004285B /* ViewModel */,
+				A2B04A93252BA4C000DB5F7B /* Helpers */,
+				A2B04A7D252BA34500DB5F7B /* Extensions */,
 				A2E24414252B96DD0004285B /* Default */,
 			);
 			path = RealTimeChat2;
@@ -90,6 +168,7 @@
 		A2E24414252B96DD0004285B /* Default */ = {
 			isa = PBXGroup;
 			children = (
+				A2B04A68252BA25300DB5F7B /* GoogleService-Info.plist */,
 				A2E24400252B96190004285B /* AppDelegate.swift */,
 				A2E24402252B96190004285B /* SceneDelegate.swift */,
 				A2E24404252B96190004285B /* ViewController.swift */,
@@ -104,6 +183,7 @@
 		A2E24415252B96F60004285B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A2B04A9B252BABCE00DB5F7B /* AppUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +191,14 @@
 		A2E24416252B96FD0004285B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A28786C9252BB74C00E173DF /* ChatsTableViewController.swift */,
+				A28786C7252BB74C00E173DF /* ContactsTableViewController.swift */,
+				A28786C8252BB74C00E173DF /* CreateAccountViewController.swift */,
+				A28786CB252BB74C00E173DF /* ProfileTableViewController.swift */,
+				A28786CA252BB74C00E173DF /* LoginViewController.swift */,
+				A2B04A8D252BA43900DB5F7B /* StartViewController.swift */,
+				A246240B252BAE1D0042E7AB /* MainTabViewController.swift */,
+				A28786D4252BB7F200E173DF /* ProfileHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,18 +206,11 @@
 		A2E24417252B97040004285B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A2B04A90252BA4B400DB5F7B /* StartViewModel.swift */,
+				A274B693252BBDD2000230D1 /* LoginViewModel.swift */,
+				A274B697252BD4D0000230D1 /* ContactsViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		A2E24419252B9A3F0004285B /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				A2E24415252B96F60004285B /* Model */,
-				A2E24416252B96FD0004285B /* View */,
-				A2E24417252B97040004285B /* ViewModel */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,7 +242,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Miyo Alpízar";
 				TargetAttributes = {
 					A2E243FC252B96190004285B = {
@@ -193,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2E2440D252B961F0004285B /* LaunchScreen.storyboard in Resources */,
+				A2B04A69252BA25300DB5F7B /* GoogleService-Info.plist in Resources */,
 				A2E2440A252B961F0004285B /* Assets.xcassets in Resources */,
 				A2E24408252B96190004285B /* Main.storyboard in Resources */,
 			);
@@ -247,9 +329,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A274B694252BBDD2000230D1 /* LoginViewModel.swift in Sources */,
+				A2B04A9C252BABCE00DB5F7B /* AppUser.swift in Sources */,
+				A2B04A98252BA4E800DB5F7B /* KeyboardHelper.swift in Sources */,
 				A2E24405252B96190004285B /* ViewController.swift in Sources */,
+				A2B04A87252BA3E100DB5F7B /* ViewControllerExtentions.swift in Sources */,
+				A28786CF252BB74D00E173DF /* LoginViewController.swift in Sources */,
+				A2B04A86252BA3E100DB5F7B /* UIViewExtensions.swift in Sources */,
+				A28786D0252BB74D00E173DF /* ProfileTableViewController.swift in Sources */,
+				A246240C252BAE1D0042E7AB /* MainTabViewController.swift in Sources */,
+				A28786CC252BB74D00E173DF /* ContactsTableViewController.swift in Sources */,
+				A28786CD252BB74D00E173DF /* CreateAccountViewController.swift in Sources */,
+				A28786D3252BB7B500E173DF /* ScrollViewController.swift in Sources */,
+				A2B04A97252BA4E800DB5F7B /* DatabaseHelper.swift in Sources */,
+				A274B698252BD4D0000230D1 /* ContactsViewModel.swift in Sources */,
 				A2E24401252B96190004285B /* AppDelegate.swift in Sources */,
+				A28786D5252BB7F200E173DF /* ProfileHeaderView.swift in Sources */,
+				A2B04A85252BA3E100DB5F7B /* ButtonExtentions.swift in Sources */,
+				A2B04A99252BA4E800DB5F7B /* UserHelper.swift in Sources */,
+				A2B04A91252BA4B400DB5F7B /* StartViewModel.swift in Sources */,
+				A2B04A8E252BA43900DB5F7B /* StartViewController.swift in Sources */,
+				A2B04A84252BA3E100DB5F7B /* StringExtensions.swift in Sources */,
 				A2E24403252B96190004285B /* SceneDelegate.swift in Sources */,
+				A2B04A83252BA3E100DB5F7B /* ColorExtensions.swift in Sources */,
+				A28786CE252BB74D00E173DF /* ChatsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +404,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -361,6 +465,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
