@@ -15,6 +15,10 @@ class ChatsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         viewmodel.LoadChats()
     }
     
@@ -44,6 +48,10 @@ class ChatsTableViewController: UITableViewController {
         cell.accessoryType = .disclosureIndicator
 
         return cell
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chat = ChatViewController(with: self.viewmodel.chats[indexPath.row])
+        self.navigationController?.pushViewController(chat, animated: true)
     }
 }
 

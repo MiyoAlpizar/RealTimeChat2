@@ -19,7 +19,7 @@ class ChatHelper {
     }
     
     ///Initalize new conversation with fisrt message
-    public func createNewChat(uid: String,send_to_user: AppUser, message: Message, done: @escaping(Bool, String) -> Void) {
+    public func createNewChat(uid: String,send_to_user_uid: String,send_to_user_name: String, message: Message, done: @escaping(Bool, String) -> Void) {
         var messageText = ""
         
         switch message.kind {
@@ -39,7 +39,7 @@ class ChatHelper {
         
         
         ref.observeSingleEvent(of: DataEventType.value) { (snap) in
-            var conversation = Conversation(uid: "", sender_uid: UserHelper.shared.user.uid, chat_with_uid: send_to_user.uid, latest_message: LastMessage(date: date, message: messageText, read: false), chats: [])
+            var conversation = Conversation(uid: "", sender_uid: UserHelper.shared.user.uid, chat_with_uid: send_to_user_uid, latest_message: LastMessage(date: date, message: messageText, read: false), chats: [])
            
             if snap.exists() {
                 do {
@@ -51,7 +51,7 @@ class ChatHelper {
                     conversation.latest_message.message = messageText
                     conversation.latest_message.read = false
                     
-                    let chat = Chat(uid: "", date: date, message: messageText, read: false)
+                    let chat = Chat(uid: "", date: date, message: messageText, read: false, from_uid: UserHelper.shared.user.uid, from_name: UserHelper.shared.user.fullName)
                     conversation.chats.append(chat)
                     let docChat = try? FirebaseEncoder().encode(conversation)
                     
@@ -61,17 +61,17 @@ class ChatHelper {
                     print(error)
                 }
             }else {
-                let chat = Chat(uid: "", date: date, message: messageText, read: false)
+                let chat = Chat(uid: "", date: date, message: messageText, read: false, from_uid: UserHelper.shared.user.uid, from_name: UserHelper.shared.user.fullName)
                 conversation.chats.append(chat)
                 let docChat = try? FirebaseEncoder().encode(conversation)
                 ref.setValue(docChat)
                 done(true, ref.key!)
             }
-            let cu = ConversationUser(uid: ref.key!, date: date, sender_uid: UserHelper.shared.user.uid, chat_with_uid: send_to_user.uid , latest_message: LastMessage(date: date, message: messageText, read: false), from: UserHelper.shared.user.fullName)
+            let cu = ConversationUser(uid: ref.key!, date: date, sender_uid: UserHelper.shared.user.uid, chat_with_uid: send_to_user_uid , latest_message: LastMessage(date: date, message: messageText, read: false), from: UserHelper.shared.user.fullName)
             let cuDoc = try? FirebaseEncoder().encode(cu)
-            DatabaseHelper.shared.usersConversationsData.child(send_to_user.uid).child(ref.key!).setValue(cuDoc)
+            DatabaseHelper.shared.usersConversationsData.child(send_to_user_uid).child(ref.key!).setValue(cuDoc)
             
-            let cu2 = ConversationUser(uid: ref.key!, date: date, sender_uid: send_to_user.uid, chat_with_uid: UserHelper.shared.user.uid , latest_message: LastMessage(date: date, message: messageText, read: false), from: send_to_user.fullName)
+            let cu2 = ConversationUser(uid: ref.key!, date: date, sender_uid: send_to_user_uid, chat_with_uid: UserHelper.shared.user.uid , latest_message: LastMessage(date: date, message: messageText, read: false), from: send_to_user_name)
             let cuDoc2 = try? FirebaseEncoder().encode(cu2)
             
             DatabaseHelper.shared.usersConversationsData.child(UserHelper.shared.user.uid).child(ref.key!).setValue(cuDoc2)
@@ -119,8 +119,27 @@ class ChatHelper {
     }
     
     ///Returns all messages with user conversation
-    public func getMessages(with uid: String, done: @escaping(Result<String, Error>) -> Void) {
-        
+    public func getMessages(with uid: String, done: @escaping(Result<Conversation?, Error>) -> Void) {
+        DatabaseHelper.shared.conversationsData.child(uid).observe(DataEventType.value) { (snap) in
+            var  conversation: Conversation?
+                
+            if !snap.exists() {
+                done(.success(conversation))
+                return
+            }
+            
+            guard let value = snap.value as? [String: Any] else {
+                done(.success(conversation))
+                return
+            }
+            
+            do {
+                conversation = try FirebaseDecoder().decode(Conversation.self, from: value)
+                done(.success(conversation))
+            } catch let error {
+                print(error)
+            }
+        }
     }
     
 }

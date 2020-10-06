@@ -34,6 +34,8 @@ struct Chat: Codable {
     let date: String
     let message: String
     let read: Bool
+    let from_uid: String
+    let from_name: String
 }
 
 struct LastMessage: Codable {

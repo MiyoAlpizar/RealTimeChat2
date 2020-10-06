@@ -12,12 +12,24 @@ import InputBarAccessoryView
 
 class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
     
+    
+    
     let viewmodel = ChatViewModel()
     
     init(with user: AppUser) {
         super.init(nibName: nil, bundle: nil)
-        viewmodel.chatWith = user
-        title = viewmodel.chatWith.fullName
+        viewmodel.chatWithUid = user.uid
+        viewmodel.chatWithName = user.fullName
+        title = user.fullName
+        self.navigationItem.largeTitleDisplayMode = .never
+    }
+    
+    init(with conversation: ConversationUser) {
+        super.init(nibName: nil, bundle: nil)
+        viewmodel.chatWithUid = conversation.chat_with_uid
+        viewmodel.chatWithName = conversation.from
+        title = conversation.from
+        viewmodel.conversation_uid = conversation.uid
         self.navigationItem.largeTitleDisplayMode = .never
     }
     
@@ -28,6 +40,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareMessage()
+        viewmodel.loadMessages()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,6 +53,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         messageInputBar.delegate = self
+        viewmodel.delegate = self
     }
     
     func currentSender() -> SenderType {
@@ -55,7 +69,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
     }
 }
 
-extension ChatViewController: InputBarAccessoryViewDelegate {
+extension ChatViewController: InputBarAccessoryViewDelegate, ChatDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         guard  !text.replacingOccurrences(of: " ", with: "").isEmpty else {
             return
@@ -65,5 +79,9 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             inputBar.inputTextView.text = ""
         }
     
+    }
+    
+    func onChatChanged() {
+        self.messagesCollectionView.reloadData()
     }
 }
