@@ -14,5 +14,8 @@ struct AppUser: Codable {
     var name: String
     var lastName: String
     var phoneNumber: String
+    var fullName: String {
+        return name + " " + lastName
+    }
 }
 

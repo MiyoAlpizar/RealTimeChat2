@@ -10,78 +10,82 @@ import UIKit
 
 class ContactsTableViewController: UITableViewController {
 
+    var viewmodel = ContactsViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        prepareTableView()
         addTargets()
+        viewmodel.LoadContacts()
+        viewmodel.delegate = self
+    }
+    
+    private func prepareTableView() {
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        self.tableView.tableFooterView = UIView()
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if section == 0 {
+            return viewmodel.contacts.InList.count
+        }
+        return viewmodel.contacts.NotInList.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        if indexPath.section == 0 {
+            cell.textLabel?.text = viewmodel.contacts.InList[indexPath.row].fullName
+        }else {
+            cell.textLabel?.text = viewmodel.contacts.NotInList[indexPath.row].fullName
+        }
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "My Contacts"
+        }
+        return "Other Contacts"
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            self.confirmAlert(title: "Add Contact", message: "Do you wanna add this contact") { [weak self] in
+                guard let `self` = self else { return }
+                self.viewmodel.updateContacts(uid: self.viewmodel.contacts.NotInList[indexPath.row].uid, isAdd: true)
+            }
+        }else {
+            
+            let actionSheet = UIAlertController(title: "Choose one option", message: "What do you wanna do?", preferredStyle: UIAlertController.Style.actionSheet)
+            
+            let cancel = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+            
+            let startChat = UIAlertAction(title: "New chat", style: UIAlertAction.Style.default) { (UIAlertAction) in
+                
+            }
+            
+            let removeContact = UIAlertAction(title: "Remove contact", style: UIAlertAction.Style.destructive) { (_) in
+                self.confirmAlert(title: "Remove Contact", message: "Do you wanna remove this contact") { [weak self] in
+                    guard let `self` = self else { return }
+                    self.viewmodel.updateContacts(uid: self.viewmodel.contacts.InList[indexPath.row].uid, isAdd: false)
+                }
+            }
+            
+            actionSheet.addAction(startChat)
+            actionSheet.addAction(removeContact)
+            actionSheet.addAction(cancel)
+            
+            self.present(actionSheet, animated: true, completion: nil)
+            
+        }
+        tableView.deselectAllRows()
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension ContactsTableViewController {
@@ -97,8 +101,8 @@ extension ContactsTableViewController {
                         cancelTitle: "Cancel",
                         inputPlaceholder: "number",
                         inputKeyboardType: .numberPad, actionHandler:
-                            { [weak self] (input:String?) in
-                                guard let `self` = self else { return }
+                            {(input:String?) in
+                                //guard let `self` = self else { return }
                                 guard let phone = input else { return }
                                 UserHelper.shared.searchUsers(with: phone) { (users) in
                                     print(users)
@@ -106,4 +110,10 @@ extension ContactsTableViewController {
                             })
     }
     
+}
+
+extension ContactsTableViewController: ContactsDelegate {
+    func onContactsLaoded(contacts: AppContacts) {
+        self.tableView.reloadData()
+    }
 }

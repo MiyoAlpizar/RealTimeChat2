@@ -22,7 +22,6 @@ class  UserHelper {
     }
     
     public func currentUser(completion: @escaping(Bool) -> Void) {
-        //logOut()
         if Auth.auth().currentUser == nil {
             completion(false)
             return
@@ -59,12 +58,15 @@ class  UserHelper {
         }
     }
     
+    public var contacts: [String] = []
+    
     public func registerUser(email: String,
                              name: String,
                              lastName: String,
                              phone: String,
                              pwd: String,
                              completion: @escaping (Result<String, Error>) -> Void) {
+        
         Auth.auth().createUser(withEmail: email, password: pwd) { (result, error) in
             if let error = error {
                 completion(.failure(error))
@@ -87,11 +89,12 @@ class  UserHelper {
     
     private func addUser(user: AppUser, completion: @escaping(Result<Bool, Error>) -> Void) {
         let docData = try! FirestoreEncoder().encode(user)
-        DatabaseHelper.shared.database.child(DatabaseHelper.shared.users).child(user.uid).setValue(docData) { (error, ref) in
+        DatabaseHelper.shared.userData.child(user.uid).setValue(docData) { (error, ref) in
             if let error = error {
                 completion(.failure(error))
                 return
             }
+            self._user = user
             completion(.success(true))
         }
     }
@@ -116,7 +119,8 @@ class  UserHelper {
     public func logOut() {
         do {
             try Auth.auth().signOut()
-           _user =  AppUser(uid: "", email: "", name: "", lastName: "", phoneNumber: "")
+            contacts = []
+            _user =  AppUser(uid: "", email: "", name: "", lastName: "", phoneNumber: "")
         }
         catch {
             print("already logged out")

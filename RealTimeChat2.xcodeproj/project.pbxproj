@@ -11,6 +11,8 @@
 		A246240C252BAE1D0042E7AB /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246240B252BAE1D0042E7AB /* MainTabViewController.swift */; };
 		A274B694252BBDD2000230D1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B693252BBDD2000230D1 /* LoginViewModel.swift */; };
 		A274B698252BD4D0000230D1 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B697252BD4D0000230D1 /* ContactsViewModel.swift */; };
+		A274B69B252BD5B5000230D1 /* ContactsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B69A252BD5B5000230D1 /* ContactsHelper.swift */; };
+		A274B69E252BD78F000230D1 /* AppContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B69D252BD78F000230D1 /* AppContacts.swift */; };
 		A28786CC252BB74D00E173DF /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28786C7252BB74C00E173DF /* ContactsTableViewController.swift */; };
 		A28786CD252BB74D00E173DF /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28786C8252BB74C00E173DF /* CreateAccountViewController.swift */; };
 		A28786CE252BB74D00E173DF /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28786C9252BB74C00E173DF /* ChatsTableViewController.swift */; };
@@ -42,6 +44,8 @@
 		A246240B252BAE1D0042E7AB /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		A274B693252BBDD2000230D1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A274B697252BD4D0000230D1 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		A274B69A252BD5B5000230D1 /* ContactsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsHelper.swift; sourceTree = "<group>"; };
+		A274B69D252BD78F000230D1 /* AppContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContacts.swift; sourceTree = "<group>"; };
 		A28786C7252BB74C00E173DF /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		A28786C8252BB74C00E173DF /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		A28786C9252BB74C00E173DF /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				A2B04A94252BA4E800DB5F7B /* DatabaseHelper.swift */,
 				A2B04A95252BA4E800DB5F7B /* KeyboardHelper.swift */,
 				A2B04A96252BA4E800DB5F7B /* UserHelper.swift */,
+				A274B69A252BD5B5000230D1 /* ContactsHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				A2B04A9B252BABCE00DB5F7B /* AppUser.swift */,
+				A274B69D252BD78F000230D1 /* AppContacts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 				A28786CF252BB74D00E173DF /* LoginViewController.swift in Sources */,
 				A2B04A86252BA3E100DB5F7B /* UIViewExtensions.swift in Sources */,
 				A28786D0252BB74D00E173DF /* ProfileTableViewController.swift in Sources */,
+				A274B69E252BD78F000230D1 /* AppContacts.swift in Sources */,
 				A246240C252BAE1D0042E7AB /* MainTabViewController.swift in Sources */,
 				A28786CC252BB74D00E173DF /* ContactsTableViewController.swift in Sources */,
 				A28786CD252BB74D00E173DF /* CreateAccountViewController.swift in Sources */,
@@ -345,6 +352,7 @@
 				A274B698252BD4D0000230D1 /* ContactsViewModel.swift in Sources */,
 				A2E24401252B96190004285B /* AppDelegate.swift in Sources */,
 				A28786D5252BB7F200E173DF /* ProfileHeaderView.swift in Sources */,
+				A274B69B252BD5B5000230D1 /* ContactsHelper.swift in Sources */,
 				A2B04A85252BA3E100DB5F7B /* ButtonExtentions.swift in Sources */,
 				A2B04A99252BA4E800DB5F7B /* UserHelper.swift in Sources */,
 				A2B04A91252BA4B400DB5F7B /* StartViewModel.swift in Sources */,

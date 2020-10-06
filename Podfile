@@ -13,5 +13,6 @@ target 'RealTimeChat2' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'SVProgressHUD'
   pod 'CodableFirebase'
+  pod 'MessageKit'
 
 end
