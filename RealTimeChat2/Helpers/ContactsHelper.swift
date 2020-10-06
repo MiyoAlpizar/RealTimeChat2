@@ -9,7 +9,7 @@
 import Firebase
 import CodableFirebase
 
-class  ContactsHelper {
+class ContactsHelper {
     
     private static let _shared = ContactsHelper()
     

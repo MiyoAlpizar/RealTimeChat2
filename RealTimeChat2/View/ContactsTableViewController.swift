@@ -67,7 +67,8 @@ class ContactsTableViewController: UITableViewController {
             let cancel = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
             
             let startChat = UIAlertAction(title: "New chat", style: UIAlertAction.Style.default) { (UIAlertAction) in
-                
+                let chat = ChatViewController(with: self.viewmodel.contacts.InList[indexPath.row])
+                self.navigationController?.pushViewController(chat, animated: true)
             }
             
             let removeContact = UIAlertAction(title: "Remove contact", style: UIAlertAction.Style.destructive) { (_) in

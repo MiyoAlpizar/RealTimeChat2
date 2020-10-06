@@ -13,6 +13,10 @@
 		A274B698252BD4D0000230D1 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B697252BD4D0000230D1 /* ContactsViewModel.swift */; };
 		A274B69B252BD5B5000230D1 /* ContactsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B69A252BD5B5000230D1 /* ContactsHelper.swift */; };
 		A274B69E252BD78F000230D1 /* AppContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B69D252BD78F000230D1 /* AppContacts.swift */; };
+		A274B6B8252C4082000230D1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B6B7252C4082000230D1 /* ChatViewController.swift */; };
+		A274B6BB252C40F2000230D1 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B6BA252C40F2000230D1 /* ChatViewModel.swift */; };
+		A274B6BE252C410B000230D1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B6BD252C410B000230D1 /* Message.swift */; };
+		A274B6C1252C4971000230D1 /* ChatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B6C0252C4971000230D1 /* ChatHelper.swift */; };
 		A28786CC252BB74D00E173DF /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28786C7252BB74C00E173DF /* ContactsTableViewController.swift */; };
 		A28786CD252BB74D00E173DF /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28786C8252BB74C00E173DF /* CreateAccountViewController.swift */; };
 		A28786CE252BB74D00E173DF /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28786C9252BB74C00E173DF /* ChatsTableViewController.swift */; };
@@ -46,6 +50,10 @@
 		A274B697252BD4D0000230D1 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		A274B69A252BD5B5000230D1 /* ContactsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsHelper.swift; sourceTree = "<group>"; };
 		A274B69D252BD78F000230D1 /* AppContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContacts.swift; sourceTree = "<group>"; };
+		A274B6B7252C4082000230D1 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		A274B6BA252C40F2000230D1 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		A274B6BD252C410B000230D1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		A274B6C0252C4971000230D1 /* ChatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHelper.swift; sourceTree = "<group>"; };
 		A28786C7252BB74C00E173DF /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		A28786C8252BB74C00E173DF /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		A28786C9252BB74C00E173DF /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +142,7 @@
 				A2B04A95252BA4E800DB5F7B /* KeyboardHelper.swift */,
 				A2B04A96252BA4E800DB5F7B /* UserHelper.swift */,
 				A274B69A252BD5B5000230D1 /* ContactsHelper.swift */,
+				A274B6C0252C4971000230D1 /* ChatHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -190,6 +199,7 @@
 			children = (
 				A2B04A9B252BABCE00DB5F7B /* AppUser.swift */,
 				A274B69D252BD78F000230D1 /* AppContacts.swift */,
+				A274B6BD252C410B000230D1 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +215,7 @@
 				A2B04A8D252BA43900DB5F7B /* StartViewController.swift */,
 				A246240B252BAE1D0042E7AB /* MainTabViewController.swift */,
 				A28786D4252BB7F200E173DF /* ProfileHeaderView.swift */,
+				A274B6B7252C4082000230D1 /* ChatViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,6 +226,7 @@
 				A2B04A90252BA4B400DB5F7B /* StartViewModel.swift */,
 				A274B693252BBDD2000230D1 /* LoginViewModel.swift */,
 				A274B697252BD4D0000230D1 /* ContactsViewModel.swift */,
+				A274B6BA252C40F2000230D1 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -339,6 +351,7 @@
 				A2B04A9C252BABCE00DB5F7B /* AppUser.swift in Sources */,
 				A2B04A98252BA4E800DB5F7B /* KeyboardHelper.swift in Sources */,
 				A2E24405252B96190004285B /* ViewController.swift in Sources */,
+				A274B6BE252C410B000230D1 /* Message.swift in Sources */,
 				A2B04A87252BA3E100DB5F7B /* ViewControllerExtentions.swift in Sources */,
 				A28786CF252BB74D00E173DF /* LoginViewController.swift in Sources */,
 				A2B04A86252BA3E100DB5F7B /* UIViewExtensions.swift in Sources */,
@@ -353,13 +366,16 @@
 				A2E24401252B96190004285B /* AppDelegate.swift in Sources */,
 				A28786D5252BB7F200E173DF /* ProfileHeaderView.swift in Sources */,
 				A274B69B252BD5B5000230D1 /* ContactsHelper.swift in Sources */,
+				A274B6C1252C4971000230D1 /* ChatHelper.swift in Sources */,
 				A2B04A85252BA3E100DB5F7B /* ButtonExtentions.swift in Sources */,
 				A2B04A99252BA4E800DB5F7B /* UserHelper.swift in Sources */,
 				A2B04A91252BA4B400DB5F7B /* StartViewModel.swift in Sources */,
 				A2B04A8E252BA43900DB5F7B /* StartViewController.swift in Sources */,
+				A274B6BB252C40F2000230D1 /* ChatViewModel.swift in Sources */,
 				A2B04A84252BA3E100DB5F7B /* StringExtensions.swift in Sources */,
 				A2E24403252B96190004285B /* SceneDelegate.swift in Sources */,
 				A2B04A83252BA3E100DB5F7B /* ColorExtensions.swift in Sources */,
+				A274B6B8252C4082000230D1 /* ChatViewController.swift in Sources */,
 				A28786CE252BB74D00E173DF /* ChatsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
