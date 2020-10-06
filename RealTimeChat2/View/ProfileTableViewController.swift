@@ -58,7 +58,7 @@ class ProfileTableViewController: UITableViewController {
         let info = cells[indexPath.section][indexPath.item]
         
         if info.type == .logout {
-            self.confirmAlert(title: "Log out", message: "You shure?, we will gonna miss you =(") {
+            self.confirmAlert(title: "Log out", message: "You shure?, gonna miss you =(") {
                 UserHelper.shared.logOut()
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window!.rootViewController = StartViewController()

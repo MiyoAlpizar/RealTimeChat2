@@ -92,8 +92,13 @@ class ContactsTableViewController: UITableViewController {
 extension ContactsTableViewController {
     
     func addTargets() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addContact))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(refreshContacts))
     }
+    
+    @objc func refreshContacts() {
+        viewmodel.LoadContacts()
+    }
+    
     
     @objc func addContact() {
         showInputDialog(title: "Look for contact",

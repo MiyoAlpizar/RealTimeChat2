@@ -74,7 +74,6 @@ class CreateAccountViewController: ScrollViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setInit()
-        
     }
     
     func setInit() {
@@ -82,6 +81,10 @@ class CreateAccountViewController: ScrollViewController {
         addViews()
         layoutViews()
         addTargets()
+        delayWithSeconds(0.3) { [weak self] in
+            guard let `self` = self else { return }
+            self.txtName.becomeFirstResponder()
+        }
     }
     
     private func addTargets() {

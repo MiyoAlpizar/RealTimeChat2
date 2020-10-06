@@ -36,6 +36,8 @@ class ContactsViewModel {
             self.contacts.InList.append(contentsOf: users.filter({ $0.uid == contact }))
         }
         
+        self.contacts.InList = self.contacts.InList.sorted{ $0.fullName < $1.fullName }
+        
         self.contacts.InList.forEach { (user) in
             var isIn: Bool = false
             _contacts.forEach { (contact) in
@@ -47,6 +49,10 @@ class ContactsViewModel {
                 self.contacts.NotInList = self.contacts.NotInList.filter({$0.uid != user.uid})
             }
         }
+        
+        self.contacts.NotInList = self.contacts.NotInList.sorted{ $0.fullName < $1.fullName }
+       
+        
         guard let delegate = self.delegate else { return }
         delegate.onContactsLaoded(contacts: self.contacts)
     }

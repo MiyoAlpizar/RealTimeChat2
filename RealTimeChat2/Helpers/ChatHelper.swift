@@ -23,7 +23,7 @@ class ChatHelper {
     
     ///Sends Message to conversation
     public func sendMessage(to converation:String, message: Message, done: @escaping(Bool) -> Void) {
-            
+        
     }
     
     ///Returns all conversation with current  user
@@ -31,8 +31,8 @@ class ChatHelper {
         
     }
     
-    ///Returns all messages with user converation
-    public func getMessages(with uid: String,done: @escaping(Result<String, Error>) -> Void) {
+    ///Returns all messages with user conversation
+    public func getMessages(with uid: String, done: @escaping(Result<String, Error>) -> Void) {
         
     }
     
