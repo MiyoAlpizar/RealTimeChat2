@@ -47,7 +47,14 @@ class  ContactsHelper {
                 }
             }
             
-            DatabaseHelper.shared.contactsData.child(UserHelper.shared.user.uid).observeSingleEvent(of: DataEventType.value) { (snap) in
+            let uid = UserHelper.shared.user.uid
+            
+            if uid.trim().length == 0 {
+                completion(users, contacts)
+                return
+            }
+            
+            DatabaseHelper.shared.contactsData.child(uid).observeSingleEvent(of: DataEventType.value) { (snap) in
                 
                 if snap.exists() {
                     if let cont = snap.value as? [String] {

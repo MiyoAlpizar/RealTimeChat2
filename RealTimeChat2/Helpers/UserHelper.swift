@@ -94,8 +94,9 @@ class  UserHelper {
                 completion(.failure(error))
                 return
             }
-            self._user = user
-            completion(.success(true))
+            self.getCurrentUser { (isIn) in
+                completion(.success(true))
+            }
         }
     }
     
