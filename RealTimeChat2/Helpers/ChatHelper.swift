@@ -87,6 +87,7 @@ class ChatHelper {
         }
     }
     
+    ///Looks for a conversation started with user, if there is a conversation, return the id for the conversation
     public func lookForConversation(with: String,current_uid: String, done: @escaping(String) -> Void) {
         
         if current_uid != "" {
