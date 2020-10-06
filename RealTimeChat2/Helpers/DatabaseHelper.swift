@@ -23,6 +23,8 @@ final class DatabaseHelper {
     public let conversations = "conversations"
     
     public let conversationsData = Database.database().reference(withPath: "conversations")
+
+    public let usersConversationsData = Database.database().reference(withPath: "users_conversations")
     
     
 }

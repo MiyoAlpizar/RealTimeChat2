@@ -61,8 +61,9 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             return
         }
         
-        viewmodel.sendMessage(with: text)
-        
-        
+        viewmodel.sendMessage(with: text) { (done) in
+            inputBar.inputTextView.text = ""
+        }
+    
     }
 }

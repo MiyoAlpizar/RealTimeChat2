@@ -23,6 +23,7 @@ struct Message: MessageType {
 
 struct Conversation: Codable {
     let uid: String
+    let sender_uid: String
     let chat_with_uid: String
     var latest_message: LastMessage
     var chats: [Chat]
@@ -39,4 +40,13 @@ struct LastMessage: Codable {
     var date: String
     var message: String
     var read: Bool
+}
+
+struct ConversationUser: Codable {
+    let uid: String
+    let date: String
+    let sender_uid: String
+    let chat_with_uid: String
+    var latest_message: LastMessage
+    var from: String
 }

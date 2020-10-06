@@ -19,7 +19,7 @@ class ChatHelper {
     }
     
     ///Initalize new conversation with fisrt message
-    public func createNewChat(with uid: String, message: Message, done: @escaping(Bool) -> Void) {
+    public func createNewChat(uid: String,send_to_user: AppUser, message: Message, done: @escaping(Bool, String) -> Void) {
         var messageText = ""
         
         switch message.kind {
@@ -30,13 +30,16 @@ class ChatHelper {
         }
         
         let date = DateFormatter.localizedString(from: Date(), dateStyle: DateFormatter.Style.short, timeStyle: DateFormatter.Style.long)
-        
-        
-        let ref = DatabaseHelper.shared.conversationsData.child(UserHelper.shared.user.uid).child(uid)
+        let ref : DatabaseReference
+        if uid == "" {
+            ref = DatabaseHelper.shared.conversationsData.childByAutoId()
+        }else {
+            ref = DatabaseHelper.shared.conversationsData.child(uid)
+        }
         
         
         ref.observeSingleEvent(of: DataEventType.value) { (snap) in
-            var conversation = Conversation(uid: "", chat_with_uid: uid, latest_message: LastMessage(date: date, message: messageText, read: false), chats: [])
+            var conversation = Conversation(uid: "", sender_uid: UserHelper.shared.user.uid, chat_with_uid: send_to_user.uid, latest_message: LastMessage(date: date, message: messageText, read: false), chats: [])
            
             if snap.exists() {
                 do {
@@ -53,7 +56,7 @@ class ChatHelper {
                     let docChat = try? FirebaseEncoder().encode(conversation)
                     
                     ref.setValue(docChat)
-                    
+                    done(true, ref.key!)
                 } catch let error {
                     print(error)
                 }
@@ -62,7 +65,18 @@ class ChatHelper {
                 conversation.chats.append(chat)
                 let docChat = try? FirebaseEncoder().encode(conversation)
                 ref.setValue(docChat)
+                done(true, ref.key!)
             }
+            let cu = ConversationUser(uid: ref.key!, date: date, sender_uid: UserHelper.shared.user.uid, chat_with_uid: send_to_user.uid , latest_message: LastMessage(date: date, message: messageText, read: false), from: UserHelper.shared.user.fullName)
+            let cuDoc = try? FirebaseEncoder().encode(cu)
+            DatabaseHelper.shared.usersConversationsData.child(send_to_user.uid).child(ref.key!).setValue(cuDoc)
+            
+            let cu2 = ConversationUser(uid: ref.key!, date: date, sender_uid: send_to_user.uid, chat_with_uid: UserHelper.shared.user.uid , latest_message: LastMessage(date: date, message: messageText, read: false), from: send_to_user.fullName)
+            let cuDoc2 = try? FirebaseEncoder().encode(cu2)
+            
+            DatabaseHelper.shared.usersConversationsData.child(UserHelper.shared.user.uid).child(ref.key!).setValue(cuDoc2)
+            
+            
             
         }
     }
