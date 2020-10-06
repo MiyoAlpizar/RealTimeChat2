@@ -20,7 +20,7 @@ class ChatViewModel {
     }()
     
     var chatWith: AppUser!
-    let isNewChat: Bool = false
+    let isNewChat: Bool = true
     let current = Sender(senderId: UserHelper.shared.user.uid, displayName: UserHelper.shared.user.fullName)
     let messages: [MessageType] = []
 
