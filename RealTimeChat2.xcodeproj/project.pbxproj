@@ -36,6 +36,7 @@
 		A2B04A98252BA4E800DB5F7B /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B04A95252BA4E800DB5F7B /* KeyboardHelper.swift */; };
 		A2B04A99252BA4E800DB5F7B /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B04A96252BA4E800DB5F7B /* UserHelper.swift */; };
 		A2B04A9C252BABCE00DB5F7B /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B04A9B252BABCE00DB5F7B /* AppUser.swift */; };
+		A2C522F9252CF73A00E23E2C /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C522F8252CF73A00E23E2C /* ChatsViewModel.swift */; };
 		A2E24401252B96190004285B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E24400252B96190004285B /* AppDelegate.swift */; };
 		A2E24403252B96190004285B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E24402252B96190004285B /* SceneDelegate.swift */; };
 		A2E24405252B96190004285B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E24404252B96190004285B /* ViewController.swift */; };
@@ -73,6 +74,7 @@
 		A2B04A95252BA4E800DB5F7B /* KeyboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
 		A2B04A96252BA4E800DB5F7B /* UserHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
 		A2B04A9B252BABCE00DB5F7B /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		A2C522F8252CF73A00E23E2C /* ChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewModel.swift; sourceTree = "<group>"; };
 		A2E243FD252B96190004285B /* RealTimeChat2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealTimeChat2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E24400252B96190004285B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2E24402252B96190004285B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				A274B693252BBDD2000230D1 /* LoginViewModel.swift */,
 				A274B697252BD4D0000230D1 /* ContactsViewModel.swift */,
 				A274B6BA252C40F2000230D1 /* ChatViewModel.swift */,
+				A2C522F8252CF73A00E23E2C /* ChatsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				A274B6C1252C4971000230D1 /* ChatHelper.swift in Sources */,
 				A2B04A85252BA3E100DB5F7B /* ButtonExtentions.swift in Sources */,
 				A2B04A99252BA4E800DB5F7B /* UserHelper.swift in Sources */,
+				A2C522F9252CF73A00E23E2C /* ChatsViewModel.swift in Sources */,
 				A2B04A91252BA4B400DB5F7B /* StartViewModel.swift in Sources */,
 				A2B04A8E252BA43900DB5F7B /* StartViewController.swift in Sources */,
 				A274B6BB252C40F2000230D1 /* ChatViewModel.swift in Sources */,

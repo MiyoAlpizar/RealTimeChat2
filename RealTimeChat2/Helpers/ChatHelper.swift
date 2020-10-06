@@ -87,8 +87,35 @@ class ChatHelper {
     }
     
     ///Returns all conversation with current  user
-    public func getAllConversation(done: @escaping(Result<String, Error>) -> Void) {
-        
+    public func getAllConversation(done: @escaping(Result<Array<ConversationUser>, Error>) -> Void) {
+        DatabaseHelper.shared.usersConversationsData.child(UserHelper.shared.user.uid).observe(DataEventType.value) { (snap) in
+            
+            var  chats: Array<ConversationUser> = []
+                
+            if !snap.exists() {
+                done(.success([]))
+                return
+            }
+            
+            snap.children.forEach { (child) in
+                do {
+                    guard let snap = child as? DataSnapshot
+                    else {
+                        return
+                    }
+                    guard let value = snap.value as? [String: Any] else {
+                        return
+                    }
+                    let chat = try FirebaseDecoder().decode(ConversationUser.self, from: value)
+                    chats.append(chat)
+                    
+                } catch let error {
+                    print(error)
+                }
+            }
+            done(.success(chats))
+            
+        }
     }
     
     ///Returns all messages with user conversation
