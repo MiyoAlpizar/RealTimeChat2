@@ -44,13 +44,24 @@ class ChatViewModel {
                               sentDate: Date(),
                               kind: MessageKind.text(Text))
         
-        ChatHelper.shared.createNewChat(uid: conversation_uid, send_to_user_uid: chatWithUid, send_to_user_name: chatWithName, message: message) { (done, uid) in
+        ChatHelper.shared.sendMessageChat(uid: conversation_uid, send_to_user_uid: chatWithUid, send_to_user_name: chatWithName, message: message) { (done, uid) in
             self.conversation_uid = uid
             completion(done)
         }
     }
     
     public func loadMessages() {
+        if conversation_uid == "" {
+            ChatHelper.shared.lookForConversation(with: chatWithUid, current_uid: conversation_uid) { (uid) in
+                self.conversation_uid = uid
+                self.getMessages()
+            }
+        }else {
+            getMessages()
+        }
+    }
+    
+    private func getMessages() {
         if conversation_uid == "" || isListening {
             return
         }
