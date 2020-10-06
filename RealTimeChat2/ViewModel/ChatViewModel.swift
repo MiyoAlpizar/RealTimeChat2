@@ -25,6 +25,7 @@ class ChatViewModel {
         return formatter
     }()
     
+    var isListening: Bool = false
     var chatWithUid: String = ""
     var chatWithName: String = ""
     var conversation_uid = ""
@@ -50,9 +51,10 @@ class ChatViewModel {
     }
     
     public func loadMessages() {
-        if conversation_uid == "" {
+        if conversation_uid == "" || isListening {
             return
         }
+        
         ChatHelper.shared.getMessages(with: conversation_uid) { (result) in
             switch result {
             case .success(let conversation):
@@ -60,6 +62,7 @@ class ChatViewModel {
                     return
                 }
                 self.HandleConversation(conversation: conversation)
+                self.isListening = true
             case .failure(let error):
                 print(error.localizedDescription)
             }
